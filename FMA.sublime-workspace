@@ -1,0 +1,689 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"w",
+				"writer\tfunction"
+			],
+			[
+				"fire",
+				"Firefox\tclass"
+			],
+			[
+				"date",
+				"datetime\tclass"
+			],
+			[
+				"gl",
+				"global\tkeyword"
+			],
+			[
+				"tu",
+				"True\tinstance"
+			],
+			[
+				"is",
+				"isQuit\tstatement"
+			],
+			[
+				"dat",
+				"datetime\tmodule"
+			],
+			[
+				"d",
+				"dump\tfunction"
+			],
+			[
+				"de",
+				"default\tparam"
+			],
+			[
+				"dump",
+				"dumps\tfunction"
+			],
+			[
+				"print",
+				"printpy\tfunction"
+			],
+			[
+				"t",
+				"true"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "FMA/algorithm.py",
+			"settings":
+			{
+				"buffer_size": 386,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "# -*- coding: utf-8 -*-\n# @Author: jrcaiwenxi\n# @Date:   2017-09-10 11:20:18\n# @Last Modified by:   jrcaiwenxi\n# @Last Modified time: 2017-09-10 11:27:26\nfrom WindPy import w\nimport pandas as pd\nimport json\nw.start()\n\n# 取数据的命令如何写可以用命令生成器来辅助完成\n# 开盘价、收盘价、最低价、最高价、成交股数、成交金额、成交笔数、涨跌（金额）、涨跌百分比、平均成交价、换手率\nwsd_data = w.wsd(\"002555.SZ\", \"open,high,low,close,volume,amt,dealnum,chg,pct_chg,vwap,turn\",\n                 \"2017-08-12\", \"2017-08-18\", \"PriceAdj=F\")\n\n# 演示如何将api返回的数据装入Pandas的Series\nopen = pd.Series(wsd_data.Data[0])\nhigh = pd.Series(wsd_data.Data[1])\nlow = pd.Series(wsd_data.Data[2])\nclose = pd.Series(wsd_data.Data[3])\n\n\n\n# 演示如何将api返回的数据装入Pandas的DataFrame\nfm = pd.DataFrame(wsd_data.Data, index=wsd_data.Fields, columns=wsd_data.Times)\nfm = fm.T  # 将矩阵转置\nprint('fm:/n', fm)",
+			"file": "FMA/1-get-data-to-csv.py",
+			"file_size": 1110,
+			"file_write_time": 131494876466166641,
+			"settings":
+			{
+				"buffer_size": 778,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/jrcaiwenxi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 20801,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/3_wind_toPandas.py",
+			"settings":
+			{
+				"buffer_size": 1004,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Install Package Control"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"build",
+				"Build With: Python"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Dev/FMA",
+		"/D/Dev/test"
+	],
+	"file_history":
+	[
+		"/C/Users/jrcaiwenxi/AppData/Roaming/Sublime Text 3/Packages/User/Anaconda.sublime-settings",
+		"/D/Dev/test/3_wind_toPandas.py",
+		"/D/Dev/test/1_wind_getdata.py",
+		"/D/Dev/test/letsgo.py",
+		"/D/Dev/test/cvstest.py",
+		"/D/Dev/test/cvstest",
+		"/D/Dev/FMA/calc_online_data.py",
+		"/D/Dev/test/json_rw.py",
+		"/D/Dev/wind-sample/1-数据函数使用案例/readme.txt",
+		"/D/Dev/test/hello.py",
+		"/D/Dev/test/json_save_datetime.py",
+		"/C/Users/jrcaiwenxi/Desktop/B.txt",
+		"/D/Me/che.txt",
+		"/D/Dev/wind-sample/1-数据函数使用案例.rar",
+		"/D/DO/1-用户洞察项目/项目介绍.txt",
+		"/D/Dev/PMP/1 . 必学教学全套【光环2016】2016光环精讲视频+串讲视频+讲义+模考题/SN.txt",
+		"/D/DO/3-部门规划/曹鹏简介.txt",
+		"/D/Dev/test/20170524_002555_wsi_data.json",
+		"/D/Dev/test/a2.py",
+		"/D/Dev/test/a1.java",
+		"/D/Dev/test/a.py",
+		"/D/Dev/test/ad.py",
+		"/C/Users/jrcaiwenxi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/README.md",
+		"/D/Dev/test/ax.py",
+		"/D/Dev/test/8_wind_visualization.py",
+		"/D/Dev/test/6_wind_independent_thread_wsq.py",
+		"/D/Dev/test/5_wind_draw.py",
+		"/D/Dev/test/20170519_pywsqdataif.data",
+		"/D/Dev/test/4_wind_wsqsava.py",
+		"/D/Dev/wind-sample/4-Python WSQ行情订阅演示案例/程序说明.txt",
+		"/D/Dev/wind-sample/4-Python WSQ行情订阅演示案例/4_wind_wsqsava.py",
+		"/D/Dev/test/2_getStockCode_json_store.py",
+		"/D/Dev/test/20170518_399005_code.json",
+		"/D/Dev/test/20170518_399005_code_weight_date.json",
+		"/D/Dev/test/20170518_399005_code_weight.json",
+		"/D/Dev/test/20170512_399005_code_weight.json",
+		"/D/Dev/wind-sample/2-WSET获取A股代码案例/getStockCode.py",
+		"/D/Dev/wind-sample/2-WSET获取A股代码案例.rar",
+		"/C/Users/jrcaiwenxi/AppData/Local/Programs/Python/Python36/lib/json/__init__.py",
+		"/D/Dev/wind-sample/1-数据函数使用案例/getdata.py",
+		"/D/Dev/test/2_wind_getStockCode_store.py",
+		"/D/Dev/ax.py",
+		"/D/Dev/wind-sample/10-取全部A股所有市场数据存入SQL Server数据库/readme.txt",
+		"/D/Dev/wind-sample/9-使用Python从Wind下载所有A股代码及历史数据行情/readme.txt",
+		"/D/Dev/wind-sample/8-python可视化价格序列/readme.txt",
+		"/D/Dev/wind-sample/7-获取全部A股市场行情数据存入SQL Server数据库/readme.txt",
+		"/D/Dev/wind-sample/6-python 实时数据demo/readme.txt",
+		"/D/Dev/wind-sample/6-",
+		"/D/Dev/FMA/hello.py",
+		"/D/Dev/FMA/hi_pds.py",
+		"/D/Dev/wind-sample/可视化.py",
+		"/D/Dev/wind-sample/数据函数使用案例/getdata.py",
+		"/D/Dev/FMA/wind_getdata.txt",
+		"/D/Dev/wind-sample/5-python api画股价图/readme.txt",
+		"/D/Dev/wind-sample/3-将API数据转换成Pandas的Series或DataFrame/数据转换之Pandas/APIDataToPandas.py",
+		"/D/Dev/wind-sample/3-将API数据转换成Pandas的Series或DataFrame/数据转换之Pandas/readme.txt",
+		"/D/Dev/wind-sample/2-WSET获取A股代码案例/readme.txt",
+		"/D/Dev/FMA/wind_getdata.py",
+		"/C/Users/jrcaiwenxi/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/C/Users/jrcaiwenxi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+		"/C/Users/jrcaiwenxi/Desktop/A",
+		"/C/Users/jrcaiwenxi/AppData/Roaming/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"complete"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "FMA/algorithm.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 386,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								369,
+								369
+							]
+						],
+						"settings":
+						{
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								225,
+								7,
+								19,
+								10,
+								0,
+								25,
+								9,
+								26,
+								196,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"git_gutter_is_enabled": false,
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "FMA/1-get-data-to-csv.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								625,
+								625
+							]
+						],
+						"settings":
+						{
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								225,
+								9,
+								10,
+								11,
+								20,
+								18,
+								8,
+								108,
+								244,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"git_gutter_is_enabled": false,
+							"is_init_dirty_state": true,
+							"open_with_edit": true,
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/jrcaiwenxi/AppData/Roaming/Sublime Text 3/Packages/Anaconda/Anaconda.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20801,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20597,
+								20563
+							]
+						],
+						"settings":
+						{
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								225,
+								5,
+								11,
+								16,
+								20,
+								42,
+								7,
+								56,
+								87,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"git_gutter_is_enabled": false,
+							"is_init_dirty_state": false,
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 12992.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test/3_wind_toPandas.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								154,
+								1003
+							]
+						],
+						"settings":
+						{
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								225,
+								5,
+								18,
+								17,
+								42,
+								36,
+								6,
+								54,
+								97,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"git_gutter_is_enabled": false,
+							"is_init_dirty_state": false,
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 83.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 189.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "FMA.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"wind-sample\\1-数据函数使用案例.rar"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 286.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
